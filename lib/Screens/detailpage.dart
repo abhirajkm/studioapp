@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:outline_material_icons/outline_material_icons.dart';
 
+
 var serviceList = [
   {'title': ' Photoshoot', 'duration': 45, 'price': 3000},
   {'title': 'Wedding Photography', 'duration': 180, 'price': 7500},
   {'title': 'Birthday Photoshoot', 'duration': 120, 'price': 5000},
+  {'title': 'Fashion Photography', 'duration':60, 'price': 4500},
+  {'title': 'Sports Photography', 'duration':120, 'price': 3800},
+
 ];
 
 class DetailScreen extends StatelessWidget {
@@ -77,7 +81,7 @@ class DetailScreen extends StatelessWidget {
                           'Service List',
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
-                            fontSize: 20,
+                            fontSize: 30,
                           ),
                         ),
                         SizedBox(
@@ -86,6 +90,8 @@ class DetailScreen extends StatelessWidget {
                         ServiceTile(serviceList[0]),
                         ServiceTile(serviceList[1]),
                         ServiceTile(serviceList[2]),
+                        ServiceTile(serviceList[3]),
+
 
                       ],
                     ),
@@ -95,7 +101,7 @@ class DetailScreen extends StatelessWidget {
               Positioned(
                 top: MediaQuery.of(context).size.height / 3 - 120,
                 child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 30),
+                  padding: EdgeInsets.symmetric(horizontal: 20,vertical: 18),
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: <Widget>[
@@ -107,11 +113,14 @@ class DetailScreen extends StatelessWidget {
                           borderRadius: BorderRadius.circular(20),
                         ),
                         child: Stack(
+
+
                           fit: StackFit.expand,
                           children: <Widget>[
                             Positioned(
-                              top: 10,
-                              right: -25,
+
+                              top:55,
+                              right: 3,
                               child: Image.asset(
                                 stylist['imgUrl'],
                                 scale: 1.7,
@@ -123,63 +132,73 @@ class DetailScreen extends StatelessWidget {
                       SizedBox(
                         width: 20,
                       ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          Text(
-                            stylist['StudioName'],
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20,
-                            ),
-                          ),
-                          SizedBox(
-                            height: 5,
-                          ),
-                          Text(
-                            stylist['place'],
-                            style: TextStyle(
-                              fontWeight: FontWeight.w300,
-                              color: Colors.grey,
-                            ),
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          Row(
-                            children: <Widget>[
-                              Icon(
-                                Icons.star,
-                                size: 16,
-                                color: Color(0xffFF8573),
-                              ),
-                              SizedBox(width: 5),
-                              Text(
-                                stylist['rating'],
+                      Padding(
+                        padding: const EdgeInsets.all(1.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            SizedBox(
+                              height: 25,
+
+                              child: Text(
+                                stylist['StudioName'],
                                 style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontStyle: FontStyle.normal,
+                                  fontSize: 20,
+                                  color: Colors.black,
+                                ),
+                              ),
+                            ),
+                            SizedBox(
+                              height: 5,
+                            ),
+                            Text(
+                              stylist['place'],
+                              style: TextStyle(
+                                fontWeight: FontWeight.w300,
+                                color: Colors.grey,
+                              ),
+                            ),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            Row(
+                              children: <Widget>[
+                                Icon(
+                                  Icons.star,
+                                  size: 16,
                                   color: Color(0xffFF8573),
                                 ),
-                              ),
-                              SizedBox(
-                                width: 5,
-                              ),
-                              Text(
-                                '(${stylist['rateAmount']})',
-                                style: TextStyle(
-                                  color: Colors.grey,
+                                SizedBox(width: 5),
+                                Text(
+                                  stylist['rating'],
+                                  style: TextStyle(
+                                    color: Color(0xffFF8573),
+                                  ),
                                 ),
-                              ),
-                            ],
-                          )
-                        ],
+                                SizedBox(
+                                  width: 5,
+                                ),
+                                Text(
+                                  '(${stylist['rateAmount']})',
+                                  style: TextStyle(
+                                    color: Colors.grey,
+                                  ),
+                                ),
+                              ],
+                            )
+                          ],
+                        ),
                       ),
                     ],
                   ),
                 ),
               ),
               Positioned(
-                right: 10,
-                top: MediaQuery.of(context).size.height / 3 - 55,
+                right: -20,
+                
+                top: MediaQuery.of(context).size.height / 3.5 - 15,
                 child: MaterialButton(
                   onPressed: () {},
                   padding: EdgeInsets.all(10),

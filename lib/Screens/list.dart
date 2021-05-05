@@ -26,11 +26,19 @@ const stylistData = [
     'bgColor': Color(0xffFFF3EB),
   },
   {
-    'StudioName': 'Falcon Photography',
+    'StudioName': 'Aura Digital Studio',
     'place': 'KOCHI',
-    'rating': '4.7',
-    'rateAmount': '70',
-    'imgUrl': 'assets/stylist1.png',
+    'rating': '4.2',
+    'rateAmount': '55',
+    'imgUrl': 'assets/aura.jpg',
+    'bgColor': Color(0xffFFF3EB),
+  },
+{
+    'StudioName': 'Crystalline Studio',
+    'place': 'KOCHI',
+    'rating': '4.3',
+    'rateAmount': '60',
+    'imgUrl': 'assets/cryst.jpg',
     'bgColor': Color(0xffFFF3EB),
   },
 
